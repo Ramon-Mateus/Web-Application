@@ -149,7 +149,6 @@ C:\Users\ramon\Source\Repos\Web-Application\Web-Application\bin\pt-br\System.Web
 C:\Users\ramon\Source\Repos\Web-Application\Web-Application\bin\pt-br\System.Web.Webpages.Razor.resources.dll
 C:\Users\ramon\Source\Repos\Web-Application\Web-Application\bin\pt-br\System.Web.Helpers.resources.dll
 C:\Users\ramon\Source\Repos\Web-Application\Web-Application\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\ramon\Source\Repos\Web-Application\Web-Application\obj\Debug\Web-Application.csproj.AssemblyReference.cache
 C:\Users\ramon\Source\Repos\Web-Application\Web-Application\obj\Debug\Web-Application.csproj.CoreCompileInputs.cache
 C:\Users\ramon\Source\Repos\Web-Application\Web-Application\obj\Debug\Web-Application.csproj.CopyComplete
 C:\Users\ramon\Source\Repos\Web-Application\Web-Application\obj\Debug\Web-Application.dll
@@ -162,3 +161,4 @@ C:\Users\20201011110008\Source\Repos\Web-Application\Web-Application\bin\EntityF
 C:\Users\20201011110008\Source\Repos\Web-Application\Web-Application\bin\EntityFramework.SqlServer.dll
 C:\Users\20201011110008\Source\Repos\Web-Application\Web-Application\bin\EntityFramework.xml
 C:\Users\20201011110008\Source\Repos\Web-Application\Web-Application\bin\EntityFramework.SqlServer.xml
+C:\Users\ramon\source\repos\Web-Application\Web-Application\obj\Debug\Web-Application.csproj.AssemblyReference.cache
