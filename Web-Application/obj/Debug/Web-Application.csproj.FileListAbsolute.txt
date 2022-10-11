@@ -244,3 +244,5 @@ C:\Users\20201011110008\projetos\Web-Application\Web-Application\obj\Debug\Web-A
 C:\Users\20201011110008\projetos\Web-Application\Web-Application\obj\Debug\Web-Application.csproj.CopyComplete
 C:\Users\20201011110008\projetos\Web-Application\Web-Application\obj\Debug\Web-Application.dll
 C:\Users\20201011110008\projetos\Web-Application\Web-Application\obj\Debug\Web-Application.pdb
+C:\Users\20201011110008\projetos\Web-Application\Web-Application\bin\Modelo.dll
+C:\Users\20201011110008\projetos\Web-Application\Web-Application\bin\Modelo.pdb
