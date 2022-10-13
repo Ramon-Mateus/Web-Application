@@ -246,3 +246,8 @@ C:\Users\20201011110008\projetos\Web-Application\Web-Application\obj\Debug\Web-A
 C:\Users\20201011110008\projetos\Web-Application\Web-Application\obj\Debug\Web-Application.pdb
 C:\Users\20201011110008\projetos\Web-Application\Web-Application\bin\Modelo.dll
 C:\Users\20201011110008\projetos\Web-Application\Web-Application\bin\Modelo.pdb
+C:\Users\20201011110008\projetos\Web-Application\Web-Application\bin\Servico.dll
+C:\Users\20201011110008\projetos\Web-Application\Web-Application\bin\Persistencia.dll
+C:\Users\20201011110008\projetos\Web-Application\Web-Application\bin\Servico.pdb
+C:\Users\20201011110008\projetos\Web-Application\Web-Application\bin\Persistencia.pdb
+C:\Users\20201011110008\projetos\Web-Application\Web-Application\bin\Persistencia.dll.config
