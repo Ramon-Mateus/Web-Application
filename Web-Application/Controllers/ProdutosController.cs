@@ -14,7 +14,6 @@ namespace Web_Application.Controllers
 {
     public class ProdutosController : Controller
     {
-        //private EFContext context = new EFContext();
         private ProdutoServico produtoServico = new ProdutoServico();
         private CategoriaServico categoriaServico = new CategoriaServico();
         private FabricanteServico fabricanteServico = new FabricanteServico();
@@ -68,55 +67,45 @@ namespace Web_Application.Controllers
             }
         }
 
-        // GET: Produtos
         public ActionResult Index()
         {
-            //var produtos = context.Produtos.Include(c => c.Categoria).Include(f => f.Fabricante).OrderBy(n => n.Nome);
-            //return View(produtos);
             return View(produtoServico.ObterProdutosClassificadosPorNome());
         }
 
-        // GET: Produtos/Details/5
         public ActionResult Details(long? id)
         {
             return ObterVisaoProdutoPorId(id);
         }
 
-        // GET: Produtos/Create
         public ActionResult Create()
         {
             PopularViewBag();
             return View();
         }
 
-        // POST: Produtos/Create
         [HttpPost]
         public ActionResult Create(Produto produto)
         {
             return GravarProduto(produto);
         }
 
-        // GET: Produtos/Edit/5
         public ActionResult Edit(long? id)
         {
             PopularViewBag(produtoServico.ObterProdutoPorId((long)id));
             return ObterVisaoProdutoPorId(id);
         }
 
-        // POST: Produtos/Edit/5
         [HttpPost]
         public ActionResult Edit(Produto produto)
         {
             return GravarProduto(produto);
         }
 
-        // GET: Produtos/Delete/5
         public ActionResult Delete(long? id)
         {
             return ObterVisaoProdutoPorId(id);
         }
 
-        // POST: Produtos/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

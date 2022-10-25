@@ -13,8 +13,6 @@ namespace Web_Application.Controllers
 {
     public class FabricantesController : Controller
     {
-        //private EFContext context = new EFContext();
-
         private FabricanteServico fabricanteServico = new FabricanteServico();
 
         private ActionResult ObterVisaoFabricantePorId(long? id)
@@ -49,19 +47,16 @@ namespace Web_Application.Controllers
             }
         }
 
-        // GET: Index
         public ActionResult Index()
         {
             return View(fabricanteServico.ObterFabricantesClassificadosPorNome());
         }
 
-        // GET: Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Fabricante fabricante)
@@ -69,13 +64,11 @@ namespace Web_Application.Controllers
             return GravarFabricante(fabricante);
         }
 
-        // GET: Fabricantes/Edit/5
         public ActionResult Edit(long? id)
         {
             return ObterVisaoFabricantePorId(id);
         }
 
-        // POST: Fabricantes/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Fabricante fabricante)
@@ -83,19 +76,16 @@ namespace Web_Application.Controllers
             return GravarFabricante(fabricante);
         }
 
-        // GET: Fabricantes/Details/5
         public ActionResult Details(long? id)
         {
             return ObterVisaoFabricantePorId(id);
         }
 
-        // GET: Fabricantes/Delete/5
         public ActionResult Delete(long? id)
         {
             return ObterVisaoFabricantePorId(id);
         }
 
-        // POST: Fabricantes/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)

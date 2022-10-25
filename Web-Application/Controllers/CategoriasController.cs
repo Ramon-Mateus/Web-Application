@@ -13,7 +13,6 @@ namespace Web_Application.Controllers
 {
     public class CategoriasController : Controller
     {
-        //private EFContext context = new EFContext();
         private CategoriaServico categoriaServico = new CategoriaServico();
 
         private ActionResult ObterVisaoCategoriaPorId(long? id)
@@ -47,19 +46,16 @@ namespace Web_Application.Controllers
                 return View(categoria);
             }
         }
-
-        // GET: Index
         public ActionResult Index()
         {
             return View(categoriaServico.ObterCategoriasClassificadasPorNome());
         }
 
-        // GET: Create
         public ActionResult Create()
         {
             return View();
         }
-        // POST: Create
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Categoria categoria)
@@ -67,13 +63,11 @@ namespace Web_Application.Controllers
             return GravarCategoria(categoria);
         }
 
-        // GET: Categorias/Edit/5
         public ActionResult Edit(long? id)
         {
             return ObterVisaoCategoriaPorId(id);
         }
 
-        // POST: Categorias/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Categoria categoria)
@@ -81,19 +75,16 @@ namespace Web_Application.Controllers
             return GravarCategoria(categoria);
         }
 
-        // GET: Categorias/Details/5
         public ActionResult Details(long? id)
         {
             return ObterVisaoCategoriaPorId(id);
         }
 
-        // GET: Categorias/Delete/5
         public ActionResult Delete(long? id)
         {
             return ObterVisaoCategoriaPorId(id);
         }
 
-        // POST: Categorias/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)
