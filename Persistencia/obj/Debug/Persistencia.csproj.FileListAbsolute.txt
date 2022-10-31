@@ -12,3 +12,5 @@ C:\Users\20201011110008\projetos\Web-Application\Persistencia\obj\Debug\Persiste
 C:\Users\20201011110008\projetos\Web-Application\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 C:\Users\20201011110008\projetos\Web-Application\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\20201011110008\projetos\Web-Application\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\20201011110008\projetos\Web-Application\Persistencia\obj\Debug\Persistencia.Migrations.InitialCreate.resources
+C:\Users\20201011110008\projetos\Web-Application\Persistencia\obj\Debug\Persistencia.csproj.GenerateResource.cache
