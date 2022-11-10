@@ -22,6 +22,11 @@ namespace Modelo.Cadastros
         [Required(ErrorMessage = "Informe a data de cadastro do produto")]
         public DateTime? DataCadastro { get; set; }
 
+        [DisplayName("Tipo do Logitipo")]
+        public string LogotipoMimeType { get; set; }
+        [DisplayName("Logotipo")]
+        public byte[] Logotipo { get; set; }
+
         [DisplayName("Categoria")]
         public long? CategoriaId { get; set; }
         [DisplayName("Fabricante")]

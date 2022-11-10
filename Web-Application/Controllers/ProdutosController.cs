@@ -50,7 +50,7 @@ namespace Web_Application.Controllers
             }
         }
 
-        private ActionResult GravarProduto(Produto produto)
+        /*private ActionResult GravarProduto(Produto produto)
         {
             try
             {
@@ -64,6 +64,41 @@ namespace Web_Application.Controllers
             }
             catch
             {
+                return View(produto);
+            }
+        }*/
+
+        private byte[] SetLogotipo(HttpPostedFileBase logotipo)
+        {
+            var bytesLogotipo = new byte[logotipo.ContentLength];
+            logotipo.InputStream.Read(bytesLogotipo, 0, logotipo.ContentLength);
+            return bytesLogotipo;
+        }
+
+        private ActionResult GravarProduto(Produto produto, HttpPostedFileBase logotipo, string chkRemoverImagem)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (chkRemoverImagem != null)
+                    {
+                        produto.Logotipo = null;
+                    }
+                    if (logotipo != null)
+                    {
+                        produto.LogotipoMimeType = logotipo.ContentType;
+                        produto.Logotipo = SetLogotipo(logotipo);
+                    }
+                    produtoServico.GravarProduto(produto);
+                    return RedirectToAction("Index");
+                }
+                PopularViewBag(produto);
+                return View(produto);
+            }
+            catch
+            {
+                PopularViewBag(produto);
                 return View(produto);
             }
         }
@@ -85,9 +120,9 @@ namespace Web_Application.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Produto produto)
+        public ActionResult Create(Produto produto, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
         {
-            return GravarProduto(produto);
+            return GravarProduto(produto, logotipo, chkRemoverImagem);
         }
 
         public ActionResult Edit(long? id)
@@ -96,11 +131,18 @@ namespace Web_Application.Controllers
             return ObterVisaoProdutoPorId(id);
         }
 
+
         [HttpPost]
-        public ActionResult Edit(Produto produto)
+        public ActionResult Edit(Produto produto, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
         {
-            return GravarProduto(produto);
+            return GravarProduto(produto, logotipo, chkRemoverImagem);
         }
+
+        //[HttpPost]
+        //public ActionResult Edit(Produto produto)
+        //{
+        //    return GravarProduto(produto);
+        //}
 
         public ActionResult Delete(long? id)
         {
