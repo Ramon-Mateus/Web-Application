@@ -27,6 +27,11 @@ namespace Modelo.Cadastros
         [DisplayName("Logotipo")]
         public byte[] Logotipo { get; set; }
 
+        [DisplayName("Nome do arquivo")]
+        public string NomeArquivo { get; set; }
+        [DisplayName("Tamanho do arquivo")]
+        public long TamanhoArquivo { get; set; }
+
         [DisplayName("Categoria")]
         public long? CategoriaId { get; set; }
         [DisplayName("Fabricante")]

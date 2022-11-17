@@ -89,6 +89,8 @@ namespace Web_Application.Controllers
                     {
                         produto.LogotipoMimeType = logotipo.ContentType;
                         produto.Logotipo = SetLogotipo(logotipo);
+                        produto.NomeArquivo = logotipo.FileName;
+                        produto.TamanhoArquivo = logotipo.ContentLength;
                     }
                     produtoServico.GravarProduto(produto);
                     return RedirectToAction("Index");
@@ -101,6 +103,16 @@ namespace Web_Application.Controllers
                 PopularViewBag(produto);
                 return View(produto);
             }
+        }
+
+        public FileContentResult GetLogotipo(long id)
+        {
+            Produto produto = produtoServico.ObterProdutoPorId(id);
+            if (produto != null)
+            {
+                return File(produto.Logotipo, produto.LogotipoMimeType);
+            }
+            return null;
         }
 
         public ActionResult Index()
