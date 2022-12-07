@@ -26,6 +26,7 @@ namespace Modelo.Cadastros
         public string LogotipoMimeType { get; set; }
         [DisplayName("Logotipo")]
         public byte[] Logotipo { get; set; }
+        public bool Destaque { get; set; }
 
         [DisplayName("Nome do arquivo")]
         public string NomeArquivo { get; set; }

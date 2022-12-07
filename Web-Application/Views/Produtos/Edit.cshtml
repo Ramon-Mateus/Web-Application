@@ -29,12 +29,12 @@
                     {
                         // <div class="panel-body">
                         //    <img class="img-thumbnail"
-                        //         src="@Url.Action("GetLogotipo", "Produtos",new { id = Model.ProdutoId })"
+                        //         src="@Url.Action("GetLogotipo2", "Produtos",new { id = Model.ProdutoId })"
                         //         style="display:block;margin-left:auto; margin-right:auto;" />
                         //</div>
                         <div class="panel-body">
                             <img class="img-thumbnail"
-                                 src="@Url.Action("GetLogotipo2", "Produtos",new { id = Model.ProdutoId })"
+                                 src="@Url.Action("GetLogotipo", "Produtos",new { id = Model.ProdutoId })"
                                  style="display:block;margin-left:auto; margin-right:auto;" />
                         </div>
                         <div class="panel-footer">
@@ -45,29 +45,29 @@
 
                                 </label>
                             </div>
-                            <!-- @Html.ActionLink("Baixar o arquivo : " + Model.NomeArquivo, "DownloadArquivo", "Produtos", new { area = "Cadastros", id = Model.ProdutoId }, null) <br /> -->
-                            @Html.ActionLink("Baixar o arquivo : " + Model.NomeArquivo, "DownloadArquivo2", "Produtos", new { area = "Cadastros", id = Model.ProdutoId }, null)
+                            @Html.ActionLink("Baixar o arquivo : " + Model.NomeArquivo, "DownloadArquivo", "Produtos", new { area = "Cadastros", id = Model.ProdutoId }, null)
+                            <!-- @Html.ActionLink("Baixar o arquivo : " + Model.NomeArquivo, "DownloadArquivo2", "Produtos", new { area = "Cadastros", id = Model.ProdutoId }, null) -->
                         </div>
-                    }
+                        }
+                    </div>
                 </div>
-            </div>
-            <div class="panel-footer panel-info">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Gravar alterações" class="btn btn-info" />
-                    @Html.ActionLink("Retornar para a listagem de PRODUTO", "Index", null,
-                    new { @class = "btn btn-warning" })
+                <div class="panel-footer panel-info">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Gravar alterações" class="btn btn-info" />
+                        @Html.ActionLink("Retornar para a listagem de PRODUTO", "Index", null,
+                        new { @class = "btn btn-warning" })
+                    </div>
+                    <br />
+                    <br />
                 </div>
-                <br />
-                <br />
             </div>
         </div>
-    </div>
-}
-@section ScriptPage {
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('li').removeClass("active");
-            $('#liProdutos').addClass("active");
-        });
-    </script>
-}
+    }
+    @section ScriptPage {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('li').removeClass("active");
+                $('#liProdutos').addClass("active");
+            });
+        </script>
+    }
