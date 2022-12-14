@@ -20,7 +20,7 @@ namespace Modelo.Cadastros
         [DataType(DataType.Date)]
         [DisplayName("Data de Cadastro")]
         [Required(ErrorMessage = "Informe a data de cadastro do produto")]
-        public DateTime? DataCadastro { get; set; }
+        public DateTime DataCadastro { get; set; }
 
         [DisplayName("Tipo do Logitipo")]
         public string LogotipoMimeType { get; set; }
