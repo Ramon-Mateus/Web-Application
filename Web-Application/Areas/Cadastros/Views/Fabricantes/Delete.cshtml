@@ -5,16 +5,19 @@
 }
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Visualizando detalhes de um FABRICANTE
+        Dados do fabricante a ser removido
     </div>
     <div class="panel-body">
-        @Html.Partial("~/Views/Fabricantes/_PartialDetailsContentPanel.cshtml", Model)
+        @Html.Partial("~/Areas/Cadastros/Views/Fabricantes/_PartialDetailsContentPanel.cshtml", Model)
     </div>
     <div class="panel-footer panel-info">
-        @Html.ActionLink("Alterar", "Edit", new { id = Model.FabricanteId },
-        new { @class = "btn btn-info" })
-        @Html.ActionLink("Retornar para a listagem", "Index", null,
-        new { @class = "btn btn-info" })
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Remover FABRICANTE" class="btn btn-danger" />
+            @Html.ActionLink("Retornar para a listagem", "Index", null,
+            new { @class = "btn btn-info" })
+        }
     </div>
 </div>
 @section ScriptPage {
@@ -25,4 +28,3 @@ $('#liFabricantes').addClass("active");
 });
     </script>
 }
-@Html.Partial("~/Views/Produtos/_PorFabricante.cshtml", Model.Produtos.ToList())

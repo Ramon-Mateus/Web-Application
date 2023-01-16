@@ -11,7 +11,7 @@
         </div>
         <div class="panel-body">
             @Html.HiddenFor(model => model.ProdutoId)
-            @Html.Partial("~/Views/Produtos/_PartialEditContentPanel.cshtml", Model)
+            @Html.Partial("~/Areas/Cadastros/Views/Produtos/_PartialEditContentPanel.cshtml", Model)
             @Html.HiddenFor(model => model.LogotipoMimeType)
             @Html.HiddenFor(model => model.Logotipo)
             <div class="col-md-offset-7 col-md-5">

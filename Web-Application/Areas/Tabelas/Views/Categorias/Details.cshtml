@@ -5,19 +5,16 @@
 }
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Dados da categoria a ser removida
+        Visualizando detalhes de uma CATEGORIA
     </div>
     <div class="panel-body">
-        @Html.Partial("~/Views/Categorias/_PartialDetailsContentPanel.cshtml", Model)
+        @Html.Partial("~/Areas/Tabelas/Views/Categorias/_PartialDetailsContentPanel.cshtml", Model)
     </div>
     <div class="panel-footer panel-info">
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-            <input type="submit" value="Remover CATEGORIA" class="btn btn-danger" />
-            @Html.ActionLink("Retornar para a listagem", "Index", null,
-            new { @class = "btn btn-info" })
-        }
+        @Html.ActionLink("Alterar", "Edit", new { id = Model.CategoriaId },
+        new { @class = "btn btn-info" })
+        @Html.ActionLink("Retornar para a listagem", "Index", null,
+        new { @class = "btn btn-info" })
     </div>
 </div>
 @section ScriptPage {
@@ -28,3 +25,4 @@
         });
     </script>
 }
+@Html.Partial("~/Views/Produtos/_PorCategoria.cshtml", Model.Produtos.ToList())

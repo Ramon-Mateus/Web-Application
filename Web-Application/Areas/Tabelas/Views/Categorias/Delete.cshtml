@@ -1,20 +1,20 @@
-﻿@model Modelo.Cadastros.Fabricante
+﻿@model Modelo.Tabelas.Categoria
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Visualizando detalhes de um FABRICANTE";
+    ViewBag.Title = "Visualizando detalhes de uma CATEGORIA";
 }
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Dados do fabricante a ser removido
+        Dados da categoria a ser removida
     </div>
     <div class="panel-body">
-        @Html.Partial("~/Views/Fabricantes/_PartialDetailsContentPanel.cshtml", Model)
+        @Html.Partial("~/Areas/Tabelas/Views/Categorias/_PartialDetailsContentPanel.cshtml", Model)
     </div>
     <div class="panel-footer panel-info">
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-            <input type="submit" value="Remover FABRICANTE" class="btn btn-danger" />
+            <input type="submit" value="Remover CATEGORIA" class="btn btn-danger" />
             @Html.ActionLink("Retornar para a listagem", "Index", null,
             new { @class = "btn btn-info" })
         }
@@ -22,9 +22,9 @@
 </div>
 @section ScriptPage {
     <script type="text/javascript">
-$(document).ready(function () {
-$('li').removeClass("active");
-$('#liFabricantes').addClass("active");
-});
+        $(document).ready(function () {
+            $('li').removeClass("active");
+            $('#liCategorias').addClass("active");
+        });
     </script>
 }

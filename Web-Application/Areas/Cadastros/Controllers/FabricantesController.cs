@@ -5,50 +5,50 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-//using Web_Application.Context;
-using Servico.Tabelas;
-using Modelo.Tabelas;
+using Modelo.Cadastros;
+using Servico.Cadastros;
 
-namespace Web_Application.Controllers
+namespace Web_Application.Areas.Cadastros.Controllers
 {
-    public class CategoriasController : Controller
+    public class FabricantesController : Controller
     {
-        private CategoriaServico categoriaServico = new CategoriaServico();
+        private FabricanteServico fabricanteServico = new FabricanteServico();
 
-        private ActionResult ObterVisaoCategoriaPorId(long? id)
+        private ActionResult ObterVisaoFabricantePorId(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(
                 HttpStatusCode.BadRequest);
             }
-            Categoria categoria = categoriaServico.ObterCategoriaPorId((long)id);
-            if (categoria == null)
+            Fabricante fabricante = fabricanteServico.ObterFabricantePorId((long)id);
+            if (fabricante == null)
             {
                 return HttpNotFound();
             }
-            return View(categoria);
+            return View(fabricante);
         }
 
-        private ActionResult GravarCategoria(Categoria categoria)
+        private ActionResult GravarFabricante(Fabricante fabricante)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    categoriaServico.GravarCategoria(categoria);
+                    fabricanteServico.GravarFabricante(fabricante);
                     return RedirectToAction("Index");
                 }
-                return View(categoria);
+                return View(fabricante);
             }
             catch
             {
-                return View(categoria);
+                return View(fabricante);
             }
         }
+
         public ActionResult Index()
         {
-            return View(categoriaServico.ObterCategoriasClassificadasPorNome());
+            return View(fabricanteServico.ObterFabricantesClassificadosPorNome());
         }
 
         public ActionResult Create()
@@ -58,31 +58,31 @@ namespace Web_Application.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Categoria categoria)
+        public ActionResult Create(Fabricante fabricante)
         {
-            return GravarCategoria(categoria);
+            return GravarFabricante(fabricante);
         }
 
         public ActionResult Edit(long? id)
         {
-            return ObterVisaoCategoriaPorId(id);
+            return ObterVisaoFabricantePorId(id);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Categoria categoria)
+        public ActionResult Edit(Fabricante fabricante)
         {
-            return GravarCategoria(categoria);
+            return GravarFabricante(fabricante);
         }
 
         public ActionResult Details(long? id)
         {
-            return ObterVisaoCategoriaPorId(id);
+            return ObterVisaoFabricantePorId(id);
         }
 
         public ActionResult Delete(long? id)
         {
-            return ObterVisaoCategoriaPorId(id);
+            return ObterVisaoFabricantePorId(id);
         }
 
         [HttpPost]
@@ -91,8 +91,8 @@ namespace Web_Application.Controllers
         {
             try
             {
-                Categoria categoria = categoriaServico.EliminarCategoriaPorId(id);
-                TempData["Message"] = "Categoria " + categoria.Nome.ToUpper() + " foi removida";
+                Fabricante fabricante = fabricanteServico.EliminarFabricantePorId(id);
+                TempData["Message"] = "Fabricante " + fabricante.Nome.ToUpper() + " foi removido";
                 return RedirectToAction("Index");
             }
             catch
