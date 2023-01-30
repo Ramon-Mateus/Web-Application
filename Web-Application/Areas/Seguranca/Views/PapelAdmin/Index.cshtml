@@ -40,7 +40,7 @@
                                 @string.Join(", ", role.Users.Select
                             (x => Html.GetUserName(x.UserId)))
 
-                            </p>                }
+                            </p>}
                     </td>
                     <td>
                         @using (Html.BeginForm("Delete", "PapelAdmin",
@@ -60,3 +60,19 @@
 </div>
 @Html.ActionLink("Criar um novo papel", "Create", null,
 new { @class = "btn btn-primary" })
+
+@section ScriptPage {
+    <script src=" @Url.Content("~/scripts/DataTables/jquery. dataTables.js")">
+    </script>
+    <script src="@Url.Content("~/scripts/DataTables/dataTables.bootstrap.js")">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').removeClass("active");
+            $('#liRoles').addClass("active");
+            $('.table').dataTable({
+                "order": [[1, "asc"]]
+            });
+        });
+    </script>
+}

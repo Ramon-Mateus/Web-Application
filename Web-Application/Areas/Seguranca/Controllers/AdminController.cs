@@ -29,6 +29,7 @@ namespace Web_Application.Areas.Seguranca.Controllers
             return View(GerenciadorUsuario.Users);
         }
 
+        [Authorize(Roles = "Administrador")]
         public ActionResult Create()
         { 
             return View(); 
@@ -62,6 +63,7 @@ namespace Web_Application.Areas.Seguranca.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Administrador")]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -100,6 +102,7 @@ namespace Web_Application.Areas.Seguranca.Controllers
             return View(uvm);
         }
 
+        [Authorize(Roles = "Administrador")]
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -115,6 +118,7 @@ namespace Web_Application.Areas.Seguranca.Controllers
             return View(usuario);
         }
 
+        [Authorize(Roles = "Administrador")]
         public ActionResult Delete(string id)
         {
             if (id == null)

@@ -23,11 +23,13 @@ namespace Web_Application.Areas.Seguranca.Controllers
             }
         }
         // GET: Seguranca/PapelAdmin
+        [Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
             return View(RoleManager.Roles);
         }
 
+        [Authorize(Roles = "Administrador")]
         public ActionResult Create()
         {
             return View();
@@ -68,6 +70,7 @@ namespace Web_Application.Areas.Seguranca.Controllers
             return View(nome);
         }
 
+        [Authorize(Roles = "Administrador")]
         public ActionResult Edit(string id)
         {
             Papel papel = RoleManager.FindById(id);

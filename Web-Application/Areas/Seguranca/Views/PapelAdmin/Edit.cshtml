@@ -77,5 +77,13 @@
         Gravar alterações
     </button>
 
-    @Html.ActionLink("Cancelar", "Index", null, new{ @class = "btn btn-default" })
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+}
+@section ScriptPage {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li').removeClass("active");
+            ('#liRoles').addClass("active");
+        });
+    </script>
 }
